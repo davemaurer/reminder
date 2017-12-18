@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "reminders#index"
+  root to: "reminds#index"
 
-  resources :reminders, only: [:new]
+  resources :reminds, only: [:new, :create]
 end
