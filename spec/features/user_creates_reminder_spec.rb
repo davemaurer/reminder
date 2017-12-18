@@ -6,7 +6,7 @@ feature "User creates reminder" do
 
     click_on "Add a reminder"
     fill_in "Title", with: "Mow the lawn"
-    click_on "Remind Me"
+    click_on "Remind me"
 
     expect(page).to have_css ".reminds li", text: "Mow the lawn"
   end

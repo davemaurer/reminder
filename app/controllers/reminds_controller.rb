@@ -6,4 +6,8 @@ class RemindsController < ApplicationController
   def new
     @remind = Remind.new
   end
+
+  def create
+
+  end
 end
