@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   resources :reminds, only: [:new, :create, :index]
 
-  resource :session, only: [:new]
+  resource :session, only: [:new, :create]
 end
