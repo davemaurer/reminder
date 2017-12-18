@@ -1,4 +1,6 @@
 class RemindsController < ApplicationController
+  before_action :authenticate
+
   def index
     @reminds = Remind.all
   end
