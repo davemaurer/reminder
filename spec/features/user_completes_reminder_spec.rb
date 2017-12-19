@@ -8,7 +8,7 @@ feature "User completes a reminder" do
     fill_in "Title", with: "Find money"
     click_on "Remind me"
 
-    click_on "Completed"
+    click_on "Complete this"
 
     expect(page).to have_css ".todos li.completed", text: "Find money"
   end
