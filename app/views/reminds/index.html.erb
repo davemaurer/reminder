@@ -4,8 +4,11 @@
   <% @reminds.each do |remind| %>
     <li class="<%= "completed" if remind.completed? %>">
       <%= remind.title %>
-      <%= button_to "Complete this", remind_completion_path(remind) %>
-      <%= button_to "Mark incomplete", remind_completion_path(remind), method: :delete %>
+      <% if remind.completed? %>
+        <%= button_to "Mark incomplete", remind_completion_path(remind), method: :delete %>
+      <% else %>
+        <%= button_to "Complete this", remind_completion_path(remind) %>
+      <% end %>
     </li>
   <% end %>
 </ul>

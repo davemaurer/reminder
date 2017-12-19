@@ -5,7 +5,8 @@ class CompletionsController < ApplicationController
   end
 
   def destroy
-    remind.update_attribute(:created_at, nil)
+    remind.mark_incomplete!
+    redirect_to reminds_path
   end
 
   private
