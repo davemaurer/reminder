@@ -2,7 +2,7 @@ class RemindsController < ApplicationController
   before_action :authenticate
 
   def index
-    @reminds = Remind.where(email: session[:current_email])
+    @reminds = Remind.where(email: current_email)
   end
 
   def new
@@ -10,7 +10,7 @@ class RemindsController < ApplicationController
   end
 
   def create
-    Remind.create(remind_params.merge(email: session[:current_email]))
+    Remind.create(remind_params.merge(email: current_email))
     redirect_to reminds_path
   end
 
