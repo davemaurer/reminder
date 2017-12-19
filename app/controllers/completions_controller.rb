@@ -1,6 +1,6 @@
 class CompletionsController < ApplicationController
   def create
-    remind.touch :completed_at
+    remind.complete!
     redirect_to reminds_path
   end
 
