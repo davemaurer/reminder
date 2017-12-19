@@ -1,2 +1,5 @@
 class Remind < ApplicationRecord
+  def completed?
+    completed_at?
+  end
 end

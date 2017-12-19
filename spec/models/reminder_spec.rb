@@ -6,5 +6,9 @@ describe Remind, "#completed?" do
 
     expect(reminder).to be_completed
   end
-  it "returns false if completed_at is nil"
+  it "returns false if completed_at is nil" do
+    reminder = Remind.new(completed_at: nil)
+
+    expect(reminder).not_to be_completed
+  end
 end

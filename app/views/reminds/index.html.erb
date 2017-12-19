@@ -2,8 +2,9 @@
 
 <ul class="reminds">
   <% @reminds.each do |remind| %>
-    <li class="<%= "completed" if remind.completed? %>"></li>
-    <li><%= remind.title %></li>
-    <li><%= button_to "Complete this", remind_completion_path(remind) %></li>
+    <li class="<%= "completed" if remind.completed? %>">
+      <%= remind.title %>
+      <%= button_to "Complete this", remind_completion_path(remind) %>
+    </li>
   <% end %>
 </ul>

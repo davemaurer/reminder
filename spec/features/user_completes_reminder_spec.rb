@@ -10,6 +10,6 @@ feature "User completes a reminder" do
 
     click_on "Complete this"
 
-    expect(page).to have_css ".todos li.completed", text: "Find money"
+    expect(page).to have_css ".reminds li.completed", text: "Find money"
   end
 end
