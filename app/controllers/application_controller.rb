@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  def current_user
+    User.new(current_email)
+  end
+
   def authenticate
     if !signed_in?
       redirect_to new_session_path
