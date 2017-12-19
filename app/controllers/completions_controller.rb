@@ -4,6 +4,10 @@ class CompletionsController < ApplicationController
     redirect_to reminds_path
   end
 
+  def destroy
+    remind.update_attribute(:created_at, nil)
+  end
+
   private
 
   def remind

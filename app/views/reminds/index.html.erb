@@ -5,6 +5,7 @@
     <li class="<%= "completed" if remind.completed? %>">
       <%= remind.title %>
       <%= button_to "Complete this", remind_completion_path(remind) %>
+      <%= button_to "Mark incomplete", remind_completion_path(remind), method: :delete %>
     </li>
   <% end %>
 </ul>
