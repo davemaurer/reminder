@@ -6,6 +6,6 @@ feature "User creates reminder" do
 
     create_reminder("Mow the lawn")
 
-    expect(page).to have_css ".reminds li", text: "Mow the lawn"
+    expect(page).to display_reminder("Mow the lawn")
   end
 end

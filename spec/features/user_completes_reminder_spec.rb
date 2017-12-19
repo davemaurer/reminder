@@ -5,9 +5,9 @@ feature "User completes a reminder" do
     sign_in
 
     create_reminder("Find money")
-    
+
     click_on "Complete this"
 
-    expect(page).to have_css ".reminds li.completed", text: "Find money"
+    expect(page).to display_completed_reminder("Find money")
   end
 end
