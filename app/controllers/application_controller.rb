@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def current_user
-    User.new(current_email)
+    User.new(session[:current_email])
   end
 
   def authenticate
@@ -12,11 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def signed_in?
-    current_email.present?
-  end
-
-  def current_email
-    session[:current_email]
+    current_user.signed_in?
   end
 
   def sign_in_as(email)

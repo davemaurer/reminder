@@ -6,4 +6,8 @@ class User
   def reminds
     Remind.where(email: @email)
   end
+
+  def signed_in?
+    @email.present?
+  end
 end
